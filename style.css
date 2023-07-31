@@ -1,7 +1,6 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Dosis", sans-serif;
   font-weight: 500;
-  background-color: gray;
 }
 
 section {
@@ -9,53 +8,98 @@ section {
 }
 
 header {
-  background-color: #212529;
-}
-header .container {
+  position: fixed;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  z-index: 1;
+  background-color: #212529;
 }
 header .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0;
+  padding: 25px 0;
 }
-header .logo img {
-  width: 200px;
-  height: 50px;
+header .menu .logoandbtn {
+  display: flex;
+  justify-content: space-between;
 }
-header nav a {
-  margin-right: 20px;
-  text-decoration: none;
-  font-size: 16px;
-  color: #fff;
+header .menu .logo {
+  display: flex;
+  width: 150px;
 }
-header nav span {
+header .menu .logo img:hover {
+  cursor: pointer;
+}
+header .menu nav {
+  display: none;
+}
+header .menu nav a {
+  font-size: 18px;
+  margin-right: 30px;
+  transition: 0.2s;
+}
+header .menu nav a:hover {
+  cursor: pointer;
   color: #ffc800;
 }
-@media (max-width: 1000px) {
-  header nav a {
-    margin-right: 5px;
-    font-size: 16px;
-    color: #fff;
+header .menu .btn {
+  display: flex;
+  align-items: center;
+  color: #999999;
+  border: 1px solid #999999;
+  border-radius: 7px;
+  padding: 8px 15px;
+}
+header .menu .btn .icon i {
+  margin: 0 8px;
+}
+@media (min-width: 1000px) {
+  header .menu nav {
+    display: block;
+  }
+  header .menu .btn {
+    display: none;
   }
 }
-@media (max-width: 600px) {
-  header nav a {
-    margin: 0 40px 5px 20px;
+@media (max-width: 1000px) {
+  header .menu:hover {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+  }
+  header .menu:hover nav {
+    display: flex;
+    flex-direction: column;
+  }
+  header .menu:hover nav a {
+    margin-bottom: 20px;
+  }
+  header .menu:hover .btn {
+    border: 3px solid #999999;
+  }
+  header .menu:hover .logoandbtn {
+    margin-bottom: 40px;
+  }
+  header .menu .logoandbtn {
+    width: 100%;
+  }
+}
+@media (max-width: 500px) {
+  header .menu .logo {
+    width: 130px;
+    padding: 12px;
+  }
+  header .menu .btn {
+    padding: 4px 12px;
+  }
+  header .menu .btn h5 {
     font-size: 14px;
+  }
+  header .menu .icon {
+    font-size: 12px;
   }
 }
 
-#services {
-  background-color: white;
-}
-#services .col-md-4 {
-  display: flex;
-  justify-content: center;
-}
 #services .textbox h1, #services .textbox h2 {
   padding-top: 20px;
   font-size: 40px;
@@ -70,13 +114,11 @@ header nav span {
   line-height: 1.5;
   padding: 20px 0 0 0;
   text-align: center;
-  font-family: Georgia, serif;
   color: #6c757d;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 18px;
 }
 #services .textbox h3 {
-  font-style: italic;
   padding-bottom: 60px;
 }
 #services .textbox h4 {
@@ -87,31 +129,25 @@ header nav span {
   flex-direction: column;
   align-items: center;
 }
-#services .box .borderr {
-  width: 30%;
-  height: 120px;
+#services .iconbcg {
+  width: 130px;
+  height: 130px;
   background-color: #ffc800;
-  border-radius: 50%;
+  border-radius: 500%;
 }
-#services .box .borderr .icon {
+#services .icon {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
-  scale: 3.8;
-  color: white;
+  font-size: 60px;
+  color: #ffffff;
 }
 @media (max-width: 1000px) {
-  #services .col-md-4 {
-    width: 100%;
-  }
-  #services .box .borderr {
-    width: 45%;
-    height: 100px;
-  }
-  #services .box .borderr .icon {
-    scale: 2;
+  #services .iconbcg {
+    width: 130px;
+    height: 130px;
   }
   #services .textbox h1 {
     font-size: 28px;
@@ -122,15 +158,10 @@ header nav span {
   #services .textbox h4 {
     padding-bottom: 20px;
   }
-  #services .box .borderr {
-    width: 15%;
-    height: 80px;
-  }
 }
-@media (max-width: 500px) {
-  #services .box .borderr {
-    width: 20%;
-    height: 70px;
+@media (max-width: 750px) {
+  #services .col-md-4 {
+    width: 100%;
   }
 }
 
@@ -151,13 +182,9 @@ header nav span {
   line-height: 1.5;
   padding: 20px 0 60px 0;
   text-align: center;
-  font-family: Georgia, serif;
   color: #6c757d;
   font-weight: 500;
   font-size: 16px;
-}
-#portfolio .textbox h3 {
-  font-style: italic;
 }
 #portfolio .box {
   position: relative;
@@ -183,7 +210,6 @@ header nav span {
 #portfolio .box .textboxtwo h4 {
   line-height: 1.5;
   text-align: center;
-  font-style: italic;
   color: #6c757d;
   font-size: 16px;
 }
@@ -232,10 +258,23 @@ header nav span {
     font-size: 30px;
   }
   #portfolio .col-md-4 {
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  #portfolio .box {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 750px) {
+  #portfolio .col-md-4 {
+    width: 100%;
+  }
+  #portfolio .box {
+    width: 60%;
+    height: 60%;
   }
 }
 
@@ -294,7 +333,8 @@ header nav span {
 }
 #about .imgbox img {
   border-radius: 50%;
-  width: 90%;
+  width: 155px;
+  height: 155px;
 }
 #about h1 {
   padding-top: 20px;
@@ -310,7 +350,6 @@ header nav span {
 #about h4 {
   line-height: 1.5;
   padding: 20px 0 20px 0;
-  font-family: Georgia, serif;
   color: #6c757d;
   font-weight: 500;
   font-size: 18px;
@@ -319,11 +358,9 @@ header nav span {
   line-height: 1.5;
   padding: 20px 0 60px 0;
   text-align: center;
-  font-family: Georgia, serif;
   color: #6c757d;
   font-weight: 500;
   font-size: 16px;
-  font-style: italic;
 }
 @media (max-width: 1000px) {
   #about .textbox h1 {
@@ -335,9 +372,6 @@ header nav span {
   #about .box h4 {
     text-align: start;
   }
-  #about .boxtwo {
-    flex-flow: row;
-  }
   #about .box h2, #about .boxtwo h2 {
     font-size: 22px;
     text-align: start;
@@ -345,34 +379,37 @@ header nav span {
   #about .box h4, #about .boxtwo h4 {
     font-size: 16px;
   }
-  #about .boxthree {
-    padding: 0 0 0 100px;
-  }
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   #about .imgbox .border, #about .imgbox .yellowborder {
     width: 100px;
     height: 100px;
     border-radius: 50%;
   }
+  #about .imgbox .border h6, #about .imgbox .yellowborder h6 {
+    font-size: 16px;
+  }
   #about .imgbox .yellowborder {
-    margin-left: -90px;
+    justify-content: center;
   }
   #about .imgbox img {
-    border-radius: 50%;
-    width: 90%;
+    width: 85px;
+    height: 85px;
+  }
+  #about .boxthree {
+    justify-content: start;
+  }
+  #about .box, #about .boxtwo {
+    flex-direction: row-reverse;
+    justify-content: start;
   }
   #about .box h4, #about .boxtwo h4 {
     font-size: 16px;
-    width: 230%;
-  }
-  #about .imgbox .yellowborder h6 {
-    font-size: 16px;
+    width: 130%;
   }
 }
 
 #our {
-  font-family: "Montserrat", sans-serif;
   background-color: #F8F9FA;
 }
 #our .col-md-4 {
@@ -392,7 +429,6 @@ header nav span {
 }
 #our .textboxthree h4 {
   color: #6c757d;
-  font-family: Georgia, serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.7;
@@ -412,8 +448,6 @@ header nav span {
 }
 #our .textbox h3 {
   color: #6c757d;
-  font-style: italic;
-  font-family: Georgia, serif;
   font-weight: 400;
 }
 #our h2 {
@@ -423,7 +457,6 @@ header nav span {
 }
 #our h4 {
   color: #6c757d;
-  font-family: Georgia, serif;
   font-weight: 400;
   padding-bottom: 20px;
 }
@@ -459,12 +492,18 @@ header nav span {
   border-radius: 50%;
   margin: 0 10px 0 10px;
 }
+#our .logobox .logo:hover {
+  cursor: pointer;
+}
 #our .logobox .logo .icon {
   display: flex;
   justify-content: center;
   align-content: center;
   color: white;
   font-size: 16px;
+}
+#our .logobox .logo .icon i:hover {
+  cursor: pointer;
 }
 #our .imgboxs {
   width: 100%;
@@ -507,29 +546,27 @@ header nav span {
 }
 #contact .textbox h3 {
   color: #6c757d;
-  font-style: italic;
-  font-family: Georgia, serif;
   font-weight: 400;
   padding-bottom: 20px;
 }
-#contact .inputs {
+#contact .inputbox {
   padding: 30px 0;
 }
-#contact .inputs input {
+#contact .inputbox input {
   margin: 13px 5px;
   padding: 25px;
   width: 100%;
   font-size: 20px;
 }
-#contact .inputs ::-moz-placeholder {
+#contact .inputbox ::-moz-placeholder {
   font-weight: bold;
   opacity: 0.5;
 }
-#contact .inputs ::placeholder {
+#contact .inputbox ::placeholder {
   font-weight: bold;
   opacity: 0.5;
 }
-#contact .inputs textarea {
+#contact .inputbox textarea {
   width: 100%;
   font-size: 20px;
   border-radius: 2%;
@@ -554,23 +591,29 @@ header nav span {
   #contact .col-md-6 {
     width: 100%;
   }
-  #contact .inputs {
+  #contact .inputbox {
     text-align: center;
   }
 }
 
 footer {
-  padding: 15px 0;
+  padding: 25px 0;
   background-color: white;
 }
-footer .box {
+footer .col-md-4 {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 }
 footer .right a {
   padding: 0 20px 0 0;
   color: #000;
+}
+footer .right a:hover {
+  cursor: pointer;
+}
+footer .left h2:hover {
+  cursor: pointer;
 }
 footer .logobox {
   display: flex;
@@ -587,6 +630,9 @@ footer .logobox .logo {
   border-radius: 50%;
   margin: 0 10px 0 10px;
 }
+footer .logobox .logo:hover {
+  cursor: pointer;
+}
 footer .logobox .logo .icon {
   display: flex;
   justify-content: center;
@@ -594,12 +640,28 @@ footer .logobox .logo .icon {
   color: white;
   font-size: 16px;
 }
+footer .logobox .logo .icon i:hover {
+  cursor: pointer;
+}
+@media (max-width: 750px) {
+  footer .col-md-4 {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  footer .right {
+    width: 230px;
+    display: flex;
+    justify-content: space-around;
+  }
+  footer .right a {
+    padding: 0;
+  }
+}
 
 #welcome {
   background-image: url("assets/header.jpg");
   background-size: cover;
   background-position: center;
-  padding: 0 0 70px;
   background-repeat: no-repeat;
 }
 #welcome .textbox {
@@ -611,18 +673,18 @@ footer .logobox .logo .icon {
 }
 #welcome .textbox h1, #welcome .textbox h3 {
   color: white;
-  font-size: 2.25rem;
-  line-height: 2.25rem;
 }
 #welcome .textbox h1 {
-  padding-top: 10rem;
-  font-style: italic;
-  margin-bottom: 2rem;
+  font-size: 38px;
+  padding: 160px 0 22px 0;
 }
 #welcome .textbox h3 {
   padding: 30px 0;
-  font-size: 4.5rem;
+  font-size: 80px;
   font-weight: 700;
+}
+#welcome .textbox h5:hover {
+  cursor: pointer;
 }
 #welcome .textbox .btn {
   color: white;
@@ -646,10 +708,10 @@ footer .logobox .logo .icon {
     text-align: center;
   }
   #welcome .textbox h1 {
-    font-size: 1.5rem;
+    font-size: 38px;
   }
   #welcome .textbox h3 {
-    font-size: 2.5rem;
+    font-size: 70px;
   }
   #welcome .textbox .btn {
     font-size: 16px;
@@ -660,25 +722,38 @@ footer .logobox .logo .icon {
   padding: 50px 0;
   background-color: #ffffff;
 }
-#socials .imgboxs {
+#socials .boxcontainer {
   display: flex;
   justify-content: space-evenly;
   padding: 20px 20px;
 }
-#socials .imgboxs .boxone {
+#socials .boxcontainer .boxone {
   width: 200px;
 }
-#socials .imgboxs .boxtwo {
+#socials .boxcontainer .boxtwo {
   width: 130px;
 }
-#socials .imgboxs .boxthree {
+#socials .boxcontainer .boxthree {
   width: 150px;
 }
-#socials .imgboxs .boxfour {
+#socials .boxcontainer .boxfour {
   width: 100px;
+}
+#socials .boxcontainer img:hover {
+  cursor: pointer;
 }
 @media (max-width: 1000px) {
   #socials .box {
     padding-right: 20px;
+  }
+}
+@media (max-width: 700px) {
+  #socials .boxcontainer {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  #socials .box {
+    padding: 0 0 30px 0;
   }
 }/*# sourceMappingURL=style.css.map */
