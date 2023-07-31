@@ -1,9 +1,9 @@
 footer
-    padding: 15px 0
+    padding: 25px 0
     background-color: #ffff
-    .box
+    .col-md-4
         display: flex
-        justify-content: space-around
+        justify-content: center
         align-items: center
     .right
         a
@@ -28,4 +28,13 @@ footer
                 align-content: center
                 color: #ffff
                 font-size: 16px
-                
+    @media (max-width: 750px)
+        .col-md-4
+            width: 100%
+            padding-bottom: 20px
+        .right
+            width: 230px
+            display: flex
+            justify-content: space-around
+            a
+                padding: 0

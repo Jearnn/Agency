@@ -42,7 +42,8 @@
                 font-size: 22px
         img
             border-radius: 50%
-            width: 90%
+            width: 155px
+            height: 155px
     h1
         padding-top: 20px
         font-size: 40px
@@ -54,20 +55,17 @@
         font-size: 28px
     h4
         line-height: 1.5
-        padding: 20px 0 20px 0 
-        font-family: Georgia, serif
+        padding: 20px 0 20px 0
         color: #6c757d
         font-weight: 500
         font-size: 18px
     h3
         line-height: 1.5
-        padding: 20px 0 60px 0 
+        padding: 20px 0 60px 0
         text-align: center
-        font-family: Georgia, serif
         color: #6c757d
         font-weight: 500
         font-size: 16px
-        font-style: italic 
     @media (max-width: 1000px)
         .textbox
             h1
@@ -77,34 +75,30 @@
                 text-align: start
             h4
                 text-align: start
-        .boxtwo
-            flex-flow: row
         .box,.boxtwo
             h2
                 font-size: 22px
                 text-align: start
             h4
                 font-size: 16px
-        .boxthree
-            padding: 0  0 0 100px
-    @media (max-width: 500px)
+    @media (max-width: 700px)
         .imgbox
             .border,.yellowborder
                 width: 100px
                 height: 100px
-                border-radius: 50% 
-            .yellowborder
-                margin-left: -90px
-            img
                 border-radius: 50%
-                width: 90%
-        .box,.boxtwo
-            h4
-                font-size: 16px
-                width: 230%
-        .imgbox
-            .yellowborder
                 h6
                     font-size: 16px
-        
-            
+            .yellowborder
+                justify-content: center
+            img
+                width: 85px
+                height: 85px
+        .boxthree
+            justify-content: start
+        .box,.boxtwo
+            flex-direction: row-reverse
+            justify-content: start
+            h4
+                font-size: 16px
+                width: 130%
