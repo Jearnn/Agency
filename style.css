@@ -10,7 +10,7 @@ section {
 header {
   position: fixed;
   width: 100%;
-  z-index: 1;
+  z-index: 4;
   background-color: #212529;
 }
 header .menu {
@@ -691,8 +691,8 @@ footer .logobox .logo .icon i:hover {
   font-size: 20px;
   font-weight: 600;
   padding: 20px 40px;
-  margin-top: 3rem;
-  margin-bottom: 7rem;
+  margin-top: 70px;
+  margin-bottom: 40px;
   background-color: #ffc800;
 }
 @media (max-width: 1000px) {
