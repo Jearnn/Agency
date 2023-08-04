@@ -1,49 +1,53 @@
 #about
     background-color: #ffff
-    .box
+    .box,.boxtwo
         display: flex
         padding-bottom: 80px
+        .textbox
+            width: 37%
+    .box
         h2
             text-align: end
         h4
             text-align: end
-        .textbox
-            margin: 0 60px 0
-            width: 34%
     .boxtwo
-        display: flex
-        padding-bottom: 80px
         flex-flow: row-reverse
-        .textbox
-            margin: 0 60px 0
-            width: 34%
+    .empty
+        width: 37%
     .boxthree
         display: flex
         justify-content: center
-        .yellowborder
-            background-color: #ffc800
-    .imgbox
-        .border,.yellowborder
+        .imgarea .border
+            .yellowborder
+                display: flex
+                justify-content: center
+                align-items: center
+                width: 150px
+                height: 150px
+                border-radius: 50%
+                background-color: #ffc800
+                h6
+                    text-align: center
+                    color: #ffffff
+                    font-size: 24px
+    .imgarea
+        display: flex
+        justify-content: center
+        width: 26%
+        height: auto
+        .border
             display: flex
             justify-content: center
             align-items: center
+            background-color: #e9ecef
+            border-radius: 50%
             width: 170px
             height: 170px
-            border-radius: 50%
-            background-color: #e9ecef
-        .yellowborder
-            background-color: #ffc800
-            border: 7px solid #e9ecef
-            text-align: center
-            color: #ffff
-            font-size: 22px
-            font-weight: 600
-            h6
-                font-size: 22px
-        img
-            border-radius: 50%
-            width: 155px
-            height: 155px
+            .imgbox
+                width: 90%
+                img
+                    border-radius: 50%
+
     h1
         padding-top: 20px
         font-size: 40px
@@ -55,7 +59,7 @@
         font-size: 28px
     h4
         line-height: 1.5
-        padding: 20px 0 20px 0
+        padding: 10px 0 20px 0
         color: #6c757d
         font-weight: 500
         font-size: 18px
@@ -67,38 +71,63 @@
         font-weight: 500
         font-size: 16px
     @media (max-width: 1000px)
-        .textbox
-            h1
-                font-size: 36px
         .box
-            h2
-                text-align: start
-            h4
-                text-align: start
-        .box,.boxtwo
-            h2
-                font-size: 22px
-                text-align: start
-            h4
-                font-size: 16px
-    @media (max-width: 700px)
-        .imgbox
-            .border,.yellowborder
+            .textbox
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                h2
+                    width: 70%
+                h4
+                    width: 90%
+        .boxtwo
+            .textbox
+                h2
+                    width: 70%
+                h4
+                    width: 90%
+        .imgarea
+            display: flex
+            justify-content: center
+            width: 26%
+            height: auto
+            .border
+                display: flex
+                justify-content: center
+                align-items: center
+                background-color: #e9ecef
+                border-radius: 50%
                 width: 100px
                 height: 100px
-                border-radius: 50%
-                h6
-                    font-size: 16px
+                .imgbox
+                    width: 90%
+                    img
+                        border-radius: 50%
+        .boxthree .imgarea .border
             .yellowborder
-                justify-content: center
-            img
-                width: 85px
-                height: 85px
-        .boxthree
-            justify-content: start
-        .box,.boxtwo
+                    width: 90px
+                    height: 90px
+                    h6
+                        font-size: 18px
+    @media (max-width: 700px)
+        .box
             flex-direction: row-reverse
             justify-content: start
-            h4
-                font-size: 16px
-                width: 130%
+        .box
+            .textbox
+                padding-left: 10px
+                width: 74%
+                align-items: flex-start
+                h2,h4
+                    text-align: start
+                    width: 100%
+        .boxtwo
+            .textbox
+                padding-left: 10px
+                width: 74%
+                h2,h4
+                    width: 100%
+        .boxthree
+            justify-content: start
+        .empty
+            width: 0

@@ -7,6 +7,10 @@ section {
   padding: 80px 0;
 }
 
+.imgbox img {
+  width: 100%;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -97,6 +101,14 @@ header .menu .btn .icon i {
   }
   header .menu .icon {
     font-size: 12px;
+  }
+}
+@media (max-width: 300px) {
+  header .logoandbtn {
+    flex-direction: column;
+  }
+  header .logoandbtn .btn {
+    width: 80px;
   }
 }
 
@@ -216,9 +228,6 @@ header .menu .btn .icon i {
 #portfolio .box .imgbox {
   position: relative;
 }
-#portfolio .box .imgbox img {
-  width: 100%;
-}
 #portfolio .box .yellow-object {
   position: absolute;
   top: 0;
@@ -281,9 +290,12 @@ header .menu .btn .icon i {
 #about {
   background-color: white;
 }
-#about .box {
+#about .box, #about .boxtwo {
   display: flex;
   padding-bottom: 80px;
+}
+#about .box .textbox, #about .boxtwo .textbox {
+  width: 37%;
 }
 #about .box h2 {
   text-align: end;
@@ -291,50 +303,50 @@ header .menu .btn .icon i {
 #about .box h4 {
   text-align: end;
 }
-#about .box .textbox {
-  margin: 0 60px 0;
-  width: 34%;
-}
 #about .boxtwo {
-  display: flex;
-  padding-bottom: 80px;
   flex-flow: row-reverse;
 }
-#about .boxtwo .textbox {
-  margin: 0 60px 0;
-  width: 34%;
+#about .empty {
+  width: 37%;
 }
 #about .boxthree {
   display: flex;
   justify-content: center;
 }
-#about .boxthree .yellowborder {
-  background-color: #ffc800;
-}
-#about .imgbox .border, #about .imgbox .yellowborder {
+#about .boxthree .imgarea .border .yellowborder {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ffc800;
+}
+#about .boxthree .imgarea .border .yellowborder h6 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+}
+#about .imgarea {
+  display: flex;
+  justify-content: center;
+  width: 26%;
+  height: auto;
+}
+#about .imgarea .border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e9ecef;
+  border-radius: 50%;
   width: 170px;
   height: 170px;
+}
+#about .imgarea .border .imgbox {
+  width: 90%;
+}
+#about .imgarea .border .imgbox img {
   border-radius: 50%;
-  background-color: #e9ecef;
-}
-#about .imgbox .yellowborder {
-  background-color: #ffc800;
-  border: 7px solid #e9ecef;
-  text-align: center;
-  color: white;
-  font-size: 22px;
-  font-weight: 600;
-}
-#about .imgbox .yellowborder h6 {
-  font-size: 22px;
-}
-#about .imgbox img {
-  border-radius: 50%;
-  width: 155px;
-  height: 155px;
 }
 #about h1 {
   padding-top: 20px;
@@ -349,7 +361,7 @@ header .menu .btn .icon i {
 }
 #about h4 {
   line-height: 1.5;
-  padding: 20px 0 20px 0;
+  padding: 10px 0 20px 0;
   color: #6c757d;
   font-weight: 500;
   font-size: 18px;
@@ -363,49 +375,78 @@ header .menu .btn .icon i {
   font-size: 16px;
 }
 @media (max-width: 1000px) {
-  #about .textbox h1 {
-    font-size: 36px;
+  #about .box .textbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
-  #about .box h2 {
-    text-align: start;
+  #about .box .textbox h2 {
+    width: 70%;
   }
-  #about .box h4 {
-    text-align: start;
+  #about .box .textbox h4 {
+    width: 90%;
   }
-  #about .box h2, #about .boxtwo h2 {
-    font-size: 22px;
-    text-align: start;
+  #about .boxtwo .textbox h2 {
+    width: 70%;
   }
-  #about .box h4, #about .boxtwo h4 {
-    font-size: 16px;
+  #about .boxtwo .textbox h4 {
+    width: 90%;
+  }
+  #about .imgarea {
+    display: flex;
+    justify-content: center;
+    width: 26%;
+    height: auto;
+  }
+  #about .imgarea .border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ecef;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  #about .imgarea .border .imgbox {
+    width: 90%;
+  }
+  #about .imgarea .border .imgbox img {
+    border-radius: 50%;
+  }
+  #about .boxthree .imgarea .border .yellowborder {
+    width: 90px;
+    height: 90px;
+  }
+  #about .boxthree .imgarea .border .yellowborder h6 {
+    font-size: 18px;
   }
 }
 @media (max-width: 700px) {
-  #about .imgbox .border, #about .imgbox .yellowborder {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  #about .box {
+    flex-direction: row-reverse;
+    justify-content: start;
   }
-  #about .imgbox .border h6, #about .imgbox .yellowborder h6 {
-    font-size: 16px;
+  #about .box .textbox {
+    padding-left: 10px;
+    width: 74%;
+    align-items: flex-start;
   }
-  #about .imgbox .yellowborder {
-    justify-content: center;
+  #about .box .textbox h2, #about .box .textbox h4 {
+    text-align: start;
+    width: 100%;
   }
-  #about .imgbox img {
-    width: 85px;
-    height: 85px;
+  #about .boxtwo .textbox {
+    padding-left: 10px;
+    width: 74%;
+  }
+  #about .boxtwo .textbox h2, #about .boxtwo .textbox h4 {
+    width: 100%;
   }
   #about .boxthree {
     justify-content: start;
   }
-  #about .box, #about .boxtwo {
-    flex-direction: row-reverse;
-    justify-content: start;
-  }
-  #about .box h4, #about .boxtwo h4 {
-    font-size: 16px;
-    width: 130%;
+  #about .empty {
+    width: 0;
   }
 }
 
@@ -464,18 +505,17 @@ header .menu .btn .icon i {
   padding: 40px 0 20px 0;
 }
 #our .imgbox {
-  padding: 20px;
+  padding: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 200px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   background-color: #d6d8da;
 }
 #our img {
   border-radius: 50%;
-  width: 185px;
 }
 #our .logobox {
   display: flex;
@@ -696,14 +736,6 @@ footer .logobox .logo .icon i:hover {
   background-color: #ffc800;
 }
 @media (max-width: 1000px) {
-  #welcome .menu .logo img {
-    width: 100px;
-    height: 25px;
-  }
-  #welcome .menu nav a {
-    font-size: 14px;
-    margin-right: 5px;
-  }
   #welcome .textbox {
     text-align: center;
   }
