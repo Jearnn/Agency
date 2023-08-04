@@ -449,6 +449,25 @@ header .menu .btn .icon i {
     width: 0;
   }
 }
+@media (max-width: 450px) {
+  #about .imgarea .border {
+    width: 70px;
+    height: 70px;
+  }
+  #about .box .textbox {
+    padding-left: 5px;
+  }
+  #about .boxtwo .textbox {
+    padding-left: 5px;
+  }
+  #about .boxthree .imgarea .border .yellowborder {
+    width: 70px;
+    height: 70px;
+  }
+  #about .boxthree .imgarea .border .yellowborder h6 {
+    font-size: 14px;
+  }
+}
 
 #our {
   background-color: #F8F9FA;
