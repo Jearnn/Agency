@@ -7,6 +7,9 @@ section {
   padding: 80px 0;
 }
 
+.imgbox {
+  overflow: hidden;
+}
 .imgbox img {
   width: 100%;
 }
@@ -128,13 +131,14 @@ header .menu .btn .icon i {
   text-align: center;
   color: #6c757d;
   font-weight: 500;
-  font-size: 18px;
 }
 #services .textbox h3 {
   padding-bottom: 60px;
+  font-size: 16px;
 }
 #services .textbox h4 {
   width: 100%;
+  font-size: 18px;
 }
 #services .box {
   display: flex;
@@ -162,7 +166,7 @@ header .menu .btn .icon i {
     height: 130px;
   }
   #services .textbox h1 {
-    font-size: 28px;
+    font-size: 38px;
   }
   #services .textbox h2 {
     font-size: 24px;
@@ -264,7 +268,7 @@ header .menu .btn .icon i {
 }
 @media (max-width: 1000px) {
   #portfolio .textbox h1 {
-    font-size: 30px;
+    font-size: 38px;
   }
   #portfolio .col-md-4 {
     width: 50%;
@@ -344,8 +348,6 @@ header .menu .btn .icon i {
 }
 #about .imgarea .border .imgbox {
   width: 90%;
-}
-#about .imgarea .border .imgbox img {
   border-radius: 50%;
 }
 #about h1 {
@@ -399,19 +401,8 @@ header .menu .btn .icon i {
     height: auto;
   }
   #about .imgarea .border {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e9ecef;
-    border-radius: 50%;
     width: 100px;
     height: 100px;
-  }
-  #about .imgarea .border .imgbox {
-    width: 90%;
-  }
-  #about .imgarea .border .imgbox img {
-    border-radius: 50%;
   }
   #about .boxthree .imgarea .border .yellowborder {
     width: 90px;
@@ -503,12 +494,13 @@ header .menu .btn .icon i {
 }
 #our .textbox h1 {
   padding: 20px;
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 600;
 }
 #our .textbox h3 {
   color: #6c757d;
   font-weight: 400;
+  font-size: 16px;
 }
 #our h2 {
   padding: 25px 0 10px 0;
@@ -599,11 +591,12 @@ header .menu .btn .icon i {
 }
 #contact .textbox h1 {
   color: white;
-  font-size: 38px;
+  font-size: 40px;
   font-weight: 600;
   padding-bottom: 20px;
 }
 #contact .textbox h3 {
+  font-size: 16px;
   color: #6c757d;
   font-weight: 400;
   padding-bottom: 20px;
@@ -734,7 +727,7 @@ footer .logobox .logo .icon i:hover {
   color: white;
 }
 #welcome .textbox h1 {
-  font-size: 38px;
+  font-size: 40px;
   padding: 160px 0 22px 0;
 }
 #welcome .textbox h3 {
